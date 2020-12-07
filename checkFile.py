@@ -13,17 +13,17 @@ if __name__ == '__main__':
     Filename = sys.argv[3]
     Log = sys.argv[4]
 
-    print(Job)
-    print(Directory)
-    print(Log)
-    print(Filename)
+    #print(Job)
+    #print(Directory)
+    #print(Log)
+    #print(Filename)
 
     filetoCheck = Directory + Filename
-    print(filetoCheck)
+    #print(filetoCheck)
 
     logtoFile = Log + Filename + ".log"
-    print(logtoFile)
+    #print(logtoFile)
 
     checkCMD = 'ffmpeg -v error -i "' + filetoCheck + '" -f null - 2>&1 | tee "' + logtoFile + '"'
-    print(checkCMD)
+    #print(checkCMD)
     os.system(checkCMD)
