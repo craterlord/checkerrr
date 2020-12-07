@@ -1,5 +1,16 @@
 import os
 import sys
+import json
+
+# Read in config file
+with open('config.json') as data_file:
+    data = json.load(data_file)
+
+# Declare variables
+job = data["data"]["job"]
+log = data["data"]["log"]
+directory = data["data"]["directory"]
+filename = data["data"]["filename"]
 
 if __name__ == '__main__':
     rootdir = sys.argv[1]
@@ -10,7 +21,9 @@ if __name__ == '__main__':
 
             if filepath.endswith(".mkv"):
                 program = "python3 checkFile.py "
-                arguments = '~/checkerrr/Job/1/ "' + os.path.dirname(filepath)  + '/" "' + os.path.basename(filepath) + '" ~/checkerrr/Log/'
+                directoryfinal = directory + job
+                directorylog = directory + log
+                arguments = directoryfinal + ' "' + os.path.dirname(filepath)  + '/" "' + os.path.basename(filepath) + '" ' + directorylog
                 commandcmd = program + arguments
                 print(commandcmd)
-                os.system(commandcmd)
+                #os.system(commandcmd)

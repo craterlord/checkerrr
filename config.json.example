@@ -1,0 +1,14 @@
+{
+        "data": {
+                "job": "job",
+                "log": "log,
+                "filename": "mkv,mp4",
+                "directory": "~/checkerrr/"
+        },
+        "database": {
+                "username": "root",
+                "password": "root",
+                "database": "db",
+                "host":     "localhost"
+        }
+}
